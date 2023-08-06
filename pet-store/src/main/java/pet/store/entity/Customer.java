@@ -28,10 +28,4 @@ public class Customer {
 	@ManyToMany(mappedBy="customers", cascade=CascadeType.PERSIST)
 	private Set<PetStore> petStores = new HashSet<> ();
 
-
-
-	public Object getCustomers() {
-		// TODO Auto-generated method stub
-		return null;
-	}
 }

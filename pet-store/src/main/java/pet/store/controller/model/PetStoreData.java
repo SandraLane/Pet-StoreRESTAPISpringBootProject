@@ -1,6 +1,8 @@
 package pet.store.controller.model;
 
+
 import java.util.HashSet;
+
 import java.util.Set;
 import pet.store.entity.Customer;
 import pet.store.entity.Employee;
@@ -46,13 +48,15 @@ public class PetStoreData {
 
 	@Data
 	@NoArgsConstructor
+	public
+	
 	static class PetStoreCustomer {
 		private Long customerId;
 		private String customerFirstName;
 		private String customerLastName;
 		private String customerEmail;
 		
-		PetStoreCustomer(Customer customer) {
+		public PetStoreCustomer(Customer customer) {
 			customerId = customer.getCustomerId();
 			customerFirstName = customer.getCustomerFirstName();
 			customerLastName = customer.getCustomerLastName();
@@ -62,6 +66,7 @@ public class PetStoreData {
 		
 	@Data
 	@NoArgsConstructor
+	public
 	static class PetStoreEmployee {
 		private Long employeeId;
 		private String employeeFirstName;
@@ -69,7 +74,7 @@ public class PetStoreData {
 		private Long employeePhone;
 		private String jobTitle;
 		
-		PetStoreEmployee(Employee employee) {
+		public PetStoreEmployee(Employee employee) {
 			employeeId = employee.getEmployeeId();
 			employeeFirstName = employee.getEmployeeFirstName();
 			employeeLastName = employee.getEmployeeLastName();
@@ -79,6 +84,8 @@ public class PetStoreData {
 		
 				
 }
+
+		
 	}
 }
 
