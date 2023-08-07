@@ -38,11 +38,10 @@ public class PetStoreController {
 	}
 	
 	
-	  @RequestMapping
+	 
 	  @PostMapping("/petStore/{petStoreId}/employee")
 	  @ResponseStatus(code = HttpStatus.CREATED) public PetStoreEmployee
-	  saveEmployee(@PathVariable Long petStoreId,
-	  
+	  saveEmployee(@PathVariable Long petStoreId,	  
 	  @RequestBody PetStoreEmployee petStoreEmployee) {
 	  log.info("Adding Employee () for Pet Store with ID= {}", petStoreId,
 	  petStoreEmployee); 
@@ -50,7 +49,7 @@ public class PetStoreController {
 	  petStoreEmployee); 
 	  }
 	  
-	  @RequestMapping
+	 
 	  @PostMapping("/petStore/{petStoreId}/customer")
 	  @ResponseStatus(code = HttpStatus.CREATED) public PetStoreCustomer
 	  saveCustomer(@PathVariable Long petStoreId,
@@ -78,8 +77,8 @@ public class PetStoreController {
 		  		return petStoreService.retrievePetStoreById(petStoreId);
 		  	}
 			 
-				@GetMapping("/petStore")
-				public List<PetStoreData> retrieveAllPetStores() {
+			@GetMapping("/petStore")
+			public List<PetStoreData> retrieveAllPetStores() {
 					log.info("Retrieve all Pet Stores called.");
 					return petStoreService.retrieveAllPetStores();
 					

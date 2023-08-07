@@ -169,20 +169,18 @@ public class PetStoreService {
 	  @Transactional(readOnly = true)
 	  public PetStoreData retrievePetStoreById(Long petStoreId) {
 		PetStore petStore = findPetStorebyId(petStoreId);
+		
+		
 		return new PetStoreData(petStore);
 	}
 
-	public List<PetStoreData> retrieveAllPetStores() {
+	  @Transactional
+	  public List<PetStoreData> retrieveAllPetStores() {
 		List<PetStore> petStores = petStoreDao.findAll();
 		List<PetStoreData> result = new LinkedList<>();
 		
 		for(PetStore petStore : petStores) {
-			PetStoreData psd = new PetStoreData(petStore);
-			
-			psd.getCustomers().clear();
-			psd.getEmployees().clear();
-			
-			result.add(psd);
+			result.add(new PetStoreData(petStore));
 		}
 		
 		return result;
